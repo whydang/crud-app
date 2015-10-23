@@ -1,40 +1,26 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
 body {
+    font-family: "Raleway", Georgia, Serif;
     background: #eee;
     text-align: center;
-    padding: 0 25px;
 }
 
-#main {
-    width: 500px;
-    margin: auto;
+.container h1 {
+    font-weight: bold;
+}
+
+.container h2 {
+    padding-bottom: 1em;
+}
+
+.form-group {
     text-align: left;
-    background: white;
-    padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
 }
 
-#main h1 {
-    margin-top: 0;
-    font-size: 35px;
-}
-
-#main ul {
-    padding-left: 20px;
-}
-
-#main .error {
-    border: 1px solid red;
-    background: #FDEFF0;
-    padding: 20px;
-}
-
-#main .success {
-    margin-top: 25px;
-}
-
-#main .success code {
-    font-size: 12px;
-    color: green;
-    line-height: 13px;
+.container img {
+    width: 100%;
+    height: auto;
 }
