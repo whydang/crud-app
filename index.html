@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My CRUD application</title>
+  <meta name="description" content="CRUD app">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+  
+  <!-- bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
+  <!-- Include parse library here -->
+  <script src="//www.parsecdn.com/js/parse-1.6.0.min.js"></script>
+  <script type="text/javascript" src="js/prase.js"></script>
+</head>
+
+<body>
+      <div class="container">
+            <h2>What should I listen to?</h2>   
+        <form>
+                <div class="form-group">
+                    <label for="band">Band</label>
+                    <input class="form-control" id="band"></input>
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input  class="form-control" id="website"></input>
+                </div>
+                <div class="form-group">
+                    <label for="song">Best song</label>
+                    <input  class="form-control" id="song"></input>
+                </div>
+                <button class="btn btn-primary" type="submit">Add song</button>
+
+            </form>
+            <!-- Here is where you should build your form.  
+                You can make it look nicer with bootstrap classes like "form-input" -->
+
+      </div>
+        <div class="container">
+            <ol id="list">
+            </ol>
+        </div>
+    </body>
+
+</html>
