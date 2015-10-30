@@ -20,7 +20,13 @@ body {
     text-align: left;
 }
 
-.container img {
+.container { 
+    width: 418px; 
+    height: 400px; 
+    overflow: hidden; 
+}
+.container img { 
+    margin-top: -90px;
     width: 100%;
-    height: auto;
+    opacity: 0;
 }

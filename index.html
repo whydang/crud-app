@@ -18,16 +18,16 @@
       
     <!-- Include parse library here -->
     <script src="//www.parsecdn.com/js/parse-1.6.0.min.js"></script>
-    <script type="text/javascript" src="js/prase.js"></script>
+    <script type="text/javascript" src="js/parse.js"></script>
   </head>
 
   <body>
-    <div id="title" class="container">
-      <img src="img/webdev.jpg" alt="web-dev-banner">  
-      <h1>INFO 343 : Web Development</h1>
+    <div id="img-title" class="container">
+      <img id="test" src="img/webdev.jpg" alt="web-dev-banner">  
     </div>
     
     <div class="container">
+      <h1>INFO 343 : Web Development</h1>
       <h2>What are your opinions on the class so far?</h2>
 
       <form>
@@ -43,6 +43,8 @@
           <input  class="form-control" placeholder="What are your thoughts?" id="review-desc"></input>
         </div>
         
+        <div class="form-group">
+          <label for='review-rating'
         <button id="button" class="btn btn-primary" type="submit">Submit Review</button>
 
       </form>
