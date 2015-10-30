@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
+
 body {
     font-family: "Raleway", Georgia, Serif;
-    background: #eee;
     text-align: center;
 }
 
@@ -20,13 +20,19 @@ body {
     text-align: left;
 }
 
-.container { 
-    width: 418px; 
-    height: 400px; 
-    overflow: hidden; 
+#img-title {
+    width: 100%;
+    overflow: hidden;
 }
+
 .container img { 
-    margin-top: -90px;
     width: 100%;
     opacity: 0;
+
+}
+
+@media screen and (max-width: 768px) {
+    .container img {
+        display: none;
+    }
 }
