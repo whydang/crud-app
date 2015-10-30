@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+#star-rating {
+    font-size: 25px;
+}
+
 .container h1 {
     font-weight: bold;
 }

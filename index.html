@@ -28,9 +28,17 @@
       <h2>What are your opinions on the class so far?</h2>
 
       <form>
+        <h3 class="form-group">Leave your anonymous feedback below:</h3>
+
+        <div id="star-rating" class="form-group">
+          <i id="star1" class="fa fa-star-o star"></i>
+          <i id="star2" class="fa fa-star-o star"></i>
+          <i id="star3" class="fa fa-star-o star"></i>
+          <i id="star4" class="fa fa-star-o star"></i>
+          <i id="star5" class="fa fa-star-o star"></i>
+        </div>
         
         <div class="form-group">
-          <h3>Leave your anonymous feedback below:</h3>
           <label for="review-title"></label>
           <input class="form-control" placeholder="Give this review a title." id="review-title"></input>
         </div>
@@ -39,11 +47,10 @@
           <label for="review-desc"></label>
           <input  class="form-control" placeholder="What are your thoughts?" id="review-desc"></input>
         </div>
-        
-        <div class="form-group">
-          <label for='review-rating'
-        <button id="button" class="btn btn-primary" type="submit">Submit Review</button>
 
+        <div class="form-group">
+          <button id="butt" class="btn btn-primary" type="submit">Submit Review</button>
+        </div>
       </form>
         <!-- Here is where you should build your form.  
             You can make it look nicer with bootstrap classes like "form-input" -->
