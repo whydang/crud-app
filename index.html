@@ -25,6 +25,15 @@
     
     <div class="container">
       <h1>INFO 343 : Web Development</h1>
+
+      <div id="avg-rating">
+        <h3 class="inline">Average rating:</h3>
+        <i id="astar1" class="fa fa-star-o star"></i>
+        <i id="astar2" class="fa fa-star-o star"></i>
+        <i id="astar3" class="fa fa-star-o star"></i>
+        <i id="astar4" class="fa fa-star-o star"></i>
+        <i id="astar5" class="fa fa-star-o star"></i>
+      </div>
       <h2>What are your opinions on the class so far?</h2>
 
       <form>
@@ -39,13 +48,13 @@
         </div>
         
         <div class="form-group">
-          <label for="review-title"></label>
-          <input class="form-control" placeholder="Give this review a title." id="review-title"></input>
+          <label for="title"></label>
+          <input class="form-control" placeholder="Give this review a title." id="title"></input>
         </div>
             
         <div class="form-group">
-          <label for="review-desc"></label>
-          <input  class="form-control" placeholder="What are your thoughts?" id="review-desc"></input>
+          <label for="desc"></label>
+          <input  class="form-control" placeholder="What are your thoughts?" id="desc"></input>
         </div>
 
         <div class="form-group">
@@ -54,9 +63,8 @@
       </form>
     </div>
     
-    <div class="container">
-      <ol id="list">
-      </ol>
+    <div class="container review-area">
+      <h2 class="form-group">Reviews</h2>
     </div>
 
   </body>

@@ -6,13 +6,24 @@
 body {
     font-family: "Raleway", Georgia, Serif;
     text-align: center;
+    font-size: 18px;
 }
 
-#star-rating {
+.star {
+    padding-top: 1em;
     font-size: 25px;
 }
 
+.inline {
+    display: inline;
+}
+
+h3 .inline {
+    margin-right: 0.25em;
+}
+
 .container h1 {
+    padding: 0.2em;
     font-weight: bold;
 }
 
@@ -33,6 +44,25 @@ body {
     width: 100%;
     opacity: 0;
 
+}
+
+.move {
+    display: inline;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 2em;
+}
+
+.review-group {
+    background-color: #eee;
+}
+
+p {
+    padding-bottom: 0.5em;
+}
+
+.review-group h3, p, .review-star {
+    padding-left: 1em;
 }
 
 @media screen and (max-width: 768px) {
