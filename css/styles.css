@@ -47,6 +47,11 @@ h3 .inline {
 
 }
 
+.rightSide {
+    padding: 1em;
+    float: right;
+}
+
 .move {
     display: inline;
     padding-left: 1.5em;
