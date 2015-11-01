@@ -103,6 +103,7 @@ $(document).ready(function() {
 				alert('unable to save');
 			}
 		});
+
 		return false;
 	});
 
@@ -124,6 +125,10 @@ $(document).ready(function() {
 
 	// populates the list with reviews
 	function buildList(results) {
+
+		//remove everything first
+		$('.review-group').remove();
+
 		reviewCount = 0;
 		totalStar = 0;
 		results.forEach(function(data) {
@@ -134,10 +139,11 @@ $(document).ready(function() {
 	var star_half = "<i class='fa fa-star-half-o star'></i>";
 	var star_filled = "<i class='fa fa-star star'></i>";
 	var star = "<i class='fa fa-star-o star'></i>";
-	var like = "<i class='fa fa-thumbs-o-up'></i>";
-	var dislike = "<i class='fa fa-thumbs-o-down'></i>";
+	var like = "<i class='fa fa-thumbs-o-up thumb'></i>";
+	var dislike = "<i class='fa fa-thumbs-o-down thumb'></i>";
 
 	function addItem(data) {
+		var thisID = data.id;
 		var title = data.get('title');
 		var desc = data.get('desc');
 		var rating = data.get('rate');
@@ -166,8 +172,10 @@ $(document).ready(function() {
 		box.append(titleEle);
 		box.append(descEle);
 
-		box.append($("<div class='move uplike'>" + like + "</div>"));
-		box.append($("<div class='move downlike'>" + dislike + "</div>"));
+		box.append($("<div class='move'>" + like + "</div>"));
+		box.append($("<div class='move'>" + dislike + "</div>"));
+
+
 		
 
 
@@ -200,15 +208,19 @@ $(document).ready(function() {
 	}
 
 	//increment thumb up on click
-	$('.uplike').click(function() {
-		gameScore.increment("up");
-		gameScore.save();
+	$('.thumb').click(function() {
+		var thumbID = $(this).attr('id');
+		console.log(thumbID);
+
+		reviews.increment('up');
+		reviews.save();
 	});
 
 	//increment thumb down on click
 	$('.downlike').click(function() {
-		gameScore.increment("down");
+		gameScore.increment('down');
 		gameScore.save();
+
 	});
 
 	getData();
