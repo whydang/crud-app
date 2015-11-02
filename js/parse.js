@@ -250,19 +250,6 @@ $(document).ready(function() {
 		$('#avg-rating').append(averageRate);
 	}
 
-	//increment thumb up on click
-	$('.thumb').click(function() {
-		var thumbID = $(this).attr('id');
-		console.log(thumbID);
-
-		reviews.increment('up');
-		reviews.save(null, {
-			success:function() {
-				getData();
-			}
-		});
-	});
-
 	getData();
 });
 
