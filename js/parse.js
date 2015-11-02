@@ -88,6 +88,9 @@ $(document).ready(function() {
 		});
 
 		reviews.set('rate', currentStar);
+		if(currentStar < 1) {
+			alert("please input a valid star from 1 to 5!");
+		}
 		currentStar = 0;
 
 		reviews.set('up', 0);
@@ -139,8 +142,8 @@ $(document).ready(function() {
 	var star_half = "<i class='fa fa-star-half-o star'></i>";
 	var star_filled = "<i class='fa fa-star star'></i>";
 	var star = "<i class='fa fa-star-o star'></i>";
-	var like = "<i class='up fa fa-thumbs-o-up'></i>";
-	var dislike = "<i class='down fa fa-thumbs-o-down'></i>";
+	var like = "<i class='up thumb fa fa-thumbs-o-up'></i>";
+	var dislike = "<i class='down thumb fa fa-thumbs-o-down'></i>";
 
 	function addItem(data) {
 		var thisID = data.id;
@@ -152,8 +155,12 @@ $(document).ready(function() {
 		totalStar += rating;
 
 		// Create a button with a <span> element (using bootstrap class to show the X)
-		var button = $('<div class="rightSide"><button class="btn-info btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div>')
-		
+		var button = $('<div class="rightSide"><button class="btn-info btn-xs"><span class="glyphicon glyphicon-remove"></span></button></div>');
+		var likeButton = $(like);
+		var dislikeButton = $(dislike);
+
+		deleteNoRates(data);
+
 		// Click function on the button to destroy the item, then re-call getData
 		button.click(function() {
 			data.destroy({
@@ -161,8 +168,14 @@ $(document).ready(function() {
 			});
 		});
 
-		$(like).click(function() {
+		likeButton.click(function() {
 			data.increment('up');
+			data.save();
+			getData();
+		});
+
+		dislikeButton.click(function() {
+			data.increment('down');
 			data.save();
 			getData();
 		});
@@ -190,13 +203,28 @@ $(document).ready(function() {
 		box.append(titleEle);
 		box.append(descEle);
 
-		box.append($("<div class='move'>" + like + "</div>"));
-		box.append($("<div class='move'>" + dislike + "</div>"));
+		addThumb(box, likeButton);
+		addThumb(box, dislikeButton);
 
 		box.append($("<p>" + data.get('up') + " out of " + Number(data.get('up') + data.get('down')) + " found this helpful</p>"));
 		$('.review-area').append(box);
 
 		computeAverage();
+	}
+
+	function addThumb(box, button) {
+		var div = $("<div class='move'></div>");
+		div.append(button);
+		box.append(div);
+	}
+
+	// deletes any data with a rating of 0 from the database
+	function deleteNoRates(data) {
+		if (data.get('rate') == 0) {
+			data.destroy({
+				success:getData
+			});
+		}
 	}
 
 	// computes the average of the stars of all reviews
