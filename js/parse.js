@@ -182,8 +182,8 @@ $(document).ready(function() {
 
 
 		var box = $("<div class='form-group review-group'></div>");
-		var titleEle = $("<h3>" + title + "</h3>");
-		var descEle = $('<p>"' + desc + '"</p>');
+		var titleEle = $("<h3></h3>").text(title);
+		var descEle = $("<p></p>").text(desc);
 
 		// Two for loops, one for filled stars
 		// One for not filled stars
